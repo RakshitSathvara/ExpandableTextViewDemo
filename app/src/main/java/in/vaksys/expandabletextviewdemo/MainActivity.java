@@ -2,15 +2,23 @@ package in.vaksys.expandabletextviewdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView tv;
+    String yourText;
+    ExpandableTextView expandableTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String yourText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+
+        //tv = (TextView) findViewById(R.id.more);
+
+        yourText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
                 "Ut volutpat interdum interdum. Nulla laoreet lacus diam, vitae " +
                 "sodales sapien commodo faucibus. Vestibulum et feugiat enim. Donec " +
                 "semper mi et euismod tempor. Sed sodales eleifend mi id varius. Nam " +
@@ -22,7 +30,18 @@ public class MainActivity extends AppCompatActivity {
                 "lectus, feugiat eget ullamcorper vitae, ornare et sem. Fusce dapibus ipsum" +
                 " sed laoreet suscipit. ";
 
-        ExpandableTextView expandableTextView = (ExpandableTextView) findViewById(R.id.lorem_ipsum);
+        expandableTextView = (ExpandableTextView) findViewById(R.id.lorem_ipsum);
         expandableTextView.setText(yourText);
+
+       /* tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                expandableTextView.setText(yourText);
+                tv.setVisibility(View.GONE);
+            }
+        });*/
+
+
     }
 }
